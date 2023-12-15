@@ -298,7 +298,7 @@
                 }
             }
       //asigna funcion al clickear en "anterior" - oculta div actual y vuelve al anterior	
-          function Anterior(){
+          function Anterior(anterior){
 
             var name = (this).getAttribute("data-message");
             
