@@ -135,7 +135,21 @@
             return correcto;
         }	
 
-    //Asigna funcion al salir de los campos de Subnet en la Phase2, llama a la funcion para popular la lista de mascaras segun la subnet introducida	
+        alertCharLimit(input){
+            if(input.attr('maxlength') !== undefined) {
+                var valor = $(this).val();
+                var maxLength = $(this).attr('maxlenght');
+
+                if(valor > maxLength) {
+                    alert("El máximo de caracteres es 15");
+                    input.attr("style", "border-color: red");
+                }
+
+                else {input.removeAttr("style");}
+            }
+        }
+    
+        //Asigna funcion al salir de los campos de Subnet en la Phase2, llama a la funcion para popular la lista de mascaras segun la subnet introducida	
         function checkSubnet(input) {
            
             var ip = input.val();
