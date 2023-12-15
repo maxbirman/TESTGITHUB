@@ -140,7 +140,7 @@
                 var valor = input.val();
                 var maxLength = input.attr('maxlength');
 
-                if(valor > maxLength) {
+                if(valor.length > maxLength) {
                     alert("El máximo de caracteres es 15");
                     input.attr("style", "border-color: red");
                     $("#siguiente").attr('disabled', 'disabled');
