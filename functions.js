@@ -300,8 +300,7 @@
       //asigna funcion al clickear en "anterior" - oculta div actual y vuelve al anterior	
           function Anterior(anterior){
 
-            var name = anterior.getAttribute("data-message");
-            alert(name);            
+            var name = anterior.getAttribute("data-message");            
             switch (name) {
                 case "general": {
                     $("#general").attr("style","display:none");
