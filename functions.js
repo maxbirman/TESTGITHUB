@@ -218,7 +218,7 @@
         };
     
         function populateDevices(){
-            var select = $("#deviceNameLocal");
+            var select = $("#deviceModel");
             $.ajax ({
                 type: "GET",
                 url: "https://raw.githubusercontent.com/maxbirman/web/main/interfaces.csv",
