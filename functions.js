@@ -217,6 +217,22 @@
 
         };
     
+        function populateDevices(){
+            var select = $("#deviceNameLocal");
+            $.ajax ({
+                type: "GET",
+                url: "https://raw.githubusercontent.com/maxbirman/web/main/interfaces.csv",
+                dataType: "text",
+                success: function(data) {
+                    var filas = data.split("\n");
+                        for(var i = 0; i < filas.length; i++){
+                            var fila = filas[i];
+                            select.append('<option value="' + fila[0] + '">' + fila[1] + '</option>');
+                        }
+                }
+            });
+        }
+
     //Generar lista de mascaras de red disponibles segun la IP seleccionada	
         function populate (select, masks){
                 var mask;
@@ -255,6 +271,7 @@
                     $("#siguiente").attr("data-message", "network");
                     //$("#siguiente").attr('disabled', 'disabled');
                     verificarCamposCompletos("network", siguiente);
+                    populateDevices();
                     cargarDatos("general");							
                     break;
                     }
