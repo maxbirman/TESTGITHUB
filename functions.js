@@ -270,7 +270,7 @@
                     $("#network").removeAttr("style");
                     $("#anterior").attr("data-message", "network");
                     $("#siguiente").attr("data-message", "network");
-                    //$("#siguiente").attr('disabled', 'disabled');
+                    $("#siguiente").attr('disabled', 'disabled');
                     verificarCamposCompletos("network", siguiente);
                     populateDevices();
                     cargarDatos("general");							
