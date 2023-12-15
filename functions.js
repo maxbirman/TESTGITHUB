@@ -143,6 +143,7 @@
                 if(valor > maxLength) {
                     alert("El máximo de caracteres es 15");
                     input.attr("style", "border-color: red");
+                    $("#siguiente").attr('disabled', 'disabled');
                 }
 
                 else {input.removeAttr("style");}
