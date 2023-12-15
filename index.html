@@ -26,7 +26,7 @@
 							<div class="mb-1">
 								<div class="row mt-3">	
 									<div class="col-2 mt-2">
-										<label for="referencia">Referencia</label>
+										<label>Referencia</label>
 									</div>
 									<div class="col-10">
 										<input type="number" class="form-control" id="referencia" aria-describedby="nameHelp" placeholder="Referencia (s&oacute;lo n&uacute;meros)" required>
@@ -36,7 +36,7 @@
 							<div class="mb-1">
 								<div class="row">	
 									<div class="col-2 mt-2">
-										<label for="contactName">Nombre</label>
+										<label>Nombre</label>
 									</div>
 									<div class="col-5">
 										<input type="contact" class="form-control" id="contactNamePrimary" aria-describedby="nameHelp" placeholder="Nombre Contacto Principal" required>		
@@ -49,7 +49,7 @@
 							<div class="mb-1">	
 								<div class="row">	
 									<div class="col-2 mt-2">
-										<label for="contactAlternatePhone">Tel&eacute;fono</label>
+										<label>Tel&eacute;fono</label>
 									</div>
 									<div class="col-5">
 										<input type="contact" class="form-control" id="contactoTelefonoPrimario" aria-describedby="emailHelp" placeholder="Tel&eacute;fono Principal" required>
@@ -62,7 +62,7 @@
 							<div class="mb-1">
 								<div class="row">	
 									<div class="col-2 mt-2 mb-2">
-										<label for="contactoEmail">Email address</label>
+										<label>Email address</label>
 									</div>
 									<div class="col-5">
 										<input type="contact" class="form-control" id="contactoEmailPrimario" aria-describedby="emailHelp" placeholder="Email de Contacto Principal" required>
@@ -80,7 +80,7 @@
 						<div class="mb-1">	
 							<div class="row mt-3">	
 								<div class="col-2 mt-2">
-									<label for="vpnName">Nombre VPN</label>
+									<label>Nombre VPN</label>
 								</div>
 								<div class="col-9">
 									<input type="text" class="form-control" id="vpnName" aria-describedby="nameHelp" placeholder="Nombre VPN Local" required maxlength="16">
@@ -95,7 +95,7 @@
 						<div class="mb-1">	
 							<div class="row mt-3">	
 								<div class="col-2 pt-2">
-									<label for="interface">Interface</label>
+									<label>Interface</label>
 								</div>
 								<div class="col-5">
 									<select name="deviceModel" class="form-control" id="deviceNameLocal" onchange="populateInterfaces()">
@@ -110,7 +110,7 @@
 						<div class="mb-1">
 							<div class="row">	
 								<div class="col-2 pt-2">
-									<label for="ipPublica">IP P&uacute;blica</label>
+									<label>IP P&uacute;blica</label>
 								</div>
 								<div class="col-5">
 									<input type="text" class="form-control" id="publicaLocal" aria-describedby="emailHelp" placeholder="IP P&uacute;blica Local" required>
@@ -125,7 +125,7 @@
 								<div class="col-3">
 									<div class="row p-3">
 										<div class="col-6">
-											<label for="natTraversal">NAT Traversal</label>
+											<label>NAT Traversal</label>
 										</div>
 										<div class="col-6">
 											<input class="form-check-input" type="checkbox" id="natTraversal">
@@ -135,7 +135,7 @@
 								<div class="col-4">
 									<div class="row p-3">
 										<div class="col-6">
-											<label for="keepAlive">Keepalive Frequency</label>
+											<label>Keepalive Frequency</label>
 										</div>	
 										<div class="col-6">
 											<input type="number" class="form-control" id="keepAlive" name="keepAlive" min="5" max="8900" value="8600" required>
@@ -145,7 +145,7 @@
 								<div class="col-4">
 									<div class="row p-3">
 										<div class="col-6">
-											<label for="deadPeerDetection">Dead Peer Detection</label>
+											<label>Dead Peer Detection</label>
 										</div>
 										<div class="col-6">
 											<select class="form-control" id="deadPeerDetection" name="deadPeerDetection">
@@ -168,7 +168,7 @@
 								<div class="col-6">
 									<div class="row">
 										<div class="col-4 mt-2">
-											<label for="method">M&eacute;todo</label>
+											<label>M&eacute;todo</label>
 										</div>
 										<div class="col-8">
 											<select class="form-control" id="authMethod" name="authMethod" onchange="pskOrCert()">
@@ -195,7 +195,7 @@
 									<div class="col-6">
 										<div class="row">
 											<div class="col-4 mt-2">
-												<label for="version">IKE Versi&oacute;n</label>
+												<label>IKE Versi&oacute;n</label>
 											</div>
 											<div class="col-8">
 												<select class="form-control" id="ikeVersion" name="ikeVersion" onchange="hideShowMode()">
@@ -208,7 +208,7 @@
 									<div class="col-6" id="ikeModeParent">
 										<div class="row">	
 											<div class="col-4 mt-2">
-												<label for="version">Modo</label>
+												<label>Modo</label>
 											</div>
 											<div class="col-8">
 												<select class="form-control" id="ikeMode" name="ikeMode">
@@ -228,7 +228,7 @@
 							<div class="mb-1">	
 								<div class="row mt-3">	
 									<div class="col-3">
-										<label for="authEncrypt" class="pt-2">Autenticaci&oacute;n / Encriptaci&oacute;n</label>
+										<labelt class="pt-2">Autenticaci&oacute;n / Encriptaci&oacute;n</label>
 									</div>
 									<div class="col-3">
 										<select class="form-control" id="phase1Proposal1" name="phase1Proposal1" required>
@@ -323,7 +323,7 @@
 							<div class="mb-1">	
 								<div class="row">	
 								<div class="col-3">
-									<label for="diffieHellman" class="pt-2">Diffie Hellman Group</label>
+									<label class="pt-2">Diffie Hellman Group</label>
 								</div>
 								<div class="col-3">
 									<select class="form-control" id="phase1DiffieHellman1" name="diffieHellman1" required>
@@ -398,7 +398,7 @@
 						<div class="mb-1">	
 							<div class="row mt-3">	
 								<div class="col-3">
-									<label for="subnets" class="pt-2">Subnets</label>
+									<labelclass="pt-2">Subnets</label>
 								</div>								
 								<div class="col-3 pe-0">
 									<input type="localSubnet" class="form-control subnet"  onblur="checkSubnet(this)" id="localSubnet" aria-describedby="nameHelp" placeholder="Local Subnet" required>
@@ -419,7 +419,7 @@
 						<div class="mb-1">	
 							<div class="row">	
 								<div class="col-3">
-									<label for="authEncrypt" class="pt-2">Autenticaci&oacute;n / Encriptaci&oacute;n</label>
+									<label class="pt-2">Autenticaci&oacute;n / Encriptaci&oacute;n</label>
 								</div>
 								<div class="col-3">
 									<select class="form-control" id="phase2Proposal1" name="phase2Proposal1" required>
@@ -514,7 +514,7 @@
 						<div class="mb-1">	
 							<div class="row">	
 								<div class="col-3">
-									<label for="diffieHellman" class="pt-2">Diffie Hellman Group</label>
+									<label class="pt-2">Diffie Hellman Group</label>
 								</div>
 								<div class="col-3">
 									<select class="form-control" id="phase2DiffieHellman1" name="phase2DiffieHellman1" required>
@@ -587,7 +587,7 @@
 								<div class="col-6">
 									<div class="row">		
 										<div class="col-6">
-											<label for="keepAlive" class="pt-2">Keepalive Frequency</label>
+											<label class="pt-2">Keepalive Frequency</label>
 										</div>	
 										<div class="col-6">
 											<input type="number" class="form-control" id="phase2KeyLifetime" name="phase2KeyLifetime" min="120" max="172800" value="43200" required>
