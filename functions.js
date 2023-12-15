@@ -141,8 +141,9 @@
                 var maxLength = input.attr('maxlength');
 
                 if(valor.length == maxLength) {
-                    alert("El máximo de caracteres es 15");
                     input.attr("style", "box-shadow:0 0 0 .25rem rgba(253,13,33,.25)");
+                    alert("El máximo de caracteres es 15");        
+                    input.val(valor.substring(0, maxLength-1));           
                     $("#siguiente").attr('disabled', 'disabled');
                 }
 
