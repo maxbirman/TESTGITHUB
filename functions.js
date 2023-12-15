@@ -137,8 +137,8 @@
 
         function alertCharLimit(input){
             if(input.attr('maxlength') !== undefined) {
-                var valor = $(this).val();
-                var maxLength = $(this).attr('maxlenght');
+                var valor = input.val();
+                var maxLength = input.attr('maxlenght');
 
                 if(valor > maxLength) {
                     alert("El máximo de caracteres es 15");
