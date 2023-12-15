@@ -95,10 +95,11 @@
 						<div class="mb-1">	
 							<div class="row mt-3">	
 								<div class="col-2 pt-2">
-									<label for="deviceName">Dispositivo</label>
+									<label for="interface">Interface</label>
 								</div>
 								<div class="col-5">
-									<select name="deviceNameLocal" class="form-control" id="deviceNameLocal" onchange="populateInterfaces()">
+									<select name="deviceModel" class="form-control" id="deviceNameLocal" onchange="populateInterfaces()">
+										<option value="" disabled>--Seleccione el modelo del dispositivo--</option>
 										<option value="50E">Fortigate 40E</option>
 										<option value="60E">Fortigate 60E</option>
 										<option value="80E">Fortigate 80E</option>
@@ -111,10 +112,7 @@
 										<option value="100F">Fortigate 100F</option>
 										<option value="200F">Fortigate 200F</option>
 									</select>									
-								</div>								
-								<div class="col-2 pt-2">
-									<label for="interface">Interface</label>
-								</div>
+								</div>						
 								<div class="col-5">									
 									<select class="form-control" name="interface" id="interface" disabled></select>
 								</div>
