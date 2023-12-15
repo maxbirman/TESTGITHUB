@@ -228,7 +228,7 @@
                         $("#siguiente").attr("data-message", "general");
                         $("#anterior").removeAttr("style");	
                         $("#anterior").attr("data-message", "general")
-                        $("#siguiente").attr('disabled', 'disabled');
+                        //$("#siguiente").attr('disabled', 'disabled');
                         verificarCamposCompletos("general", siguiente);
                         cargarDatos("contacto");
                     }else {alert("Por favor ingrese un email valido");}
@@ -239,7 +239,7 @@
                     $("#network").removeAttr("style");
                     $("#anterior").attr("data-message", "network");
                     $("#siguiente").attr("data-message", "network");
-                    $("#siguiente").attr('disabled', 'disabled');
+                    //$("#siguiente").attr('disabled', 'disabled');
                     verificarCamposCompletos("network", siguiente);
                     cargarDatos("general");							
                     break;
@@ -256,7 +256,7 @@
                                     $("#authentication").removeAttr("style");
                                     $("#anterior").attr("data-message", "authentication");
                                     $("#siguiente").attr("data-message", "authentication");
-                                    $("#siguiente").attr('disabled', 'disabled');
+                                    //$("#siguiente").attr('disabled', 'disabled');
                                     verificarCamposCompletos("authentication", siguiente);
                                 }else {alert("Las IP pública local y la IP pública remota no pueden ser iguales")}
                             }else if (ipPublicaCorrecta(publicaLocal) && !ipPublicaCorrecta(publicaRemota)){
@@ -285,7 +285,7 @@
                     $("#phase2Proposal").removeAttr("style");
                     $("#anterior").attr("data-message", "phase2Proposal");
                     $("#siguiente").attr("data-message", "phase2Proposal");
-                    $("#siguiente").attr('disabled', 'disabled');
+                    //$("#siguiente").attr('disabled', 'disabled');
                     verificarCamposCompletos("phase2Proposal", siguiente);
                     cargarDatos("phase1Proposal");
                     $(this).text("Finalizar"); // al pasar al ultimo div "siguiente" se convierte en "finalizar"
