@@ -136,7 +136,7 @@
         }	
 
         function alertCharLimit(input){
-            alert(input);
+            alert(input.val());
             if(input.attr('maxlength') !== undefined) {
                 var valor = input.val();
                 var maxLength = input.attr('maxlenght');
