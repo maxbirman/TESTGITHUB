@@ -229,7 +229,7 @@
                         $("#anterior").removeAttr("style");	
                         $("#anterior").attr("data-message", "general")
                         $("#siguiente").attr('disabled', 'disabled');
-                        verificarCamposCompletos("general");
+                        verificarCamposCompletos("general", siguiente);
                         cargarDatos("contacto");
                     }else {alert("Por favor ingrese un email valido");}
                     break;
@@ -240,7 +240,7 @@
                     $("#anterior").attr("data-message", "network");
                     $("#siguiente").attr("data-message", "network");
                     $("#siguiente").attr('disabled', 'disabled');
-                    verificarCamposCompletos("network");
+                    verificarCamposCompletos("network", siguiente);
                     cargarDatos("general");							
                     break;
                     }
@@ -257,7 +257,7 @@
                                     $("#anterior").attr("data-message", "authentication");
                                     $("#siguiente").attr("data-message", "authentication");
                                     $("#siguiente").attr('disabled', 'disabled');
-                                    verificarCamposCompletos("authentication");
+                                    verificarCamposCompletos("authentication", siguiente);
                                 }else {alert("Las IP pública local y la IP pública remota no pueden ser iguales")}
                             }else if (ipPublicaCorrecta(publicaLocal) && !ipPublicaCorrecta(publicaRemota)){
                                 alert("La IP remota introducida no es una IP pública");
@@ -276,7 +276,7 @@
                     $("#phase1Proposal").removeAttr("style");
                     $("#anterior").attr("data-message", "phase1Proposal");
                     $("#siguiente").attr("data-message", "phase1Proposal");
-                    verificarCamposCompletos("phase1Proposal");
+                    verificarCamposCompletos("phase1Proposal", siguiente);
                     cargarDatos("authentication");
                     break;
                     }
@@ -286,7 +286,7 @@
                     $("#anterior").attr("data-message", "phase2Proposal");
                     $("#siguiente").attr("data-message", "phase2Proposal");
                     $("#siguiente").attr('disabled', 'disabled');
-                    verificarCamposCompletos("phase2Proposal");
+                    verificarCamposCompletos("phase2Proposal", siguiente);
                     cargarDatos("phase1Proposal");
                     $(this).text("Finalizar"); // al pasar al ultimo div "siguiente" se convierte en "finalizar"
                     break;
@@ -300,14 +300,15 @@
       //asigna funcion al clickear en "anterior" - oculta div actual y vuelve al anterior	
           function Anterior(anterior){
 
-            var name = anterior.getAttribute("data-message");            
+            var name = anterior.getAttribute("data-message");    
+            var siguiente = $("#siguiente");        
             switch (name) {
                 case "general": {
                     $("#general").attr("style","display:none");
                     $("#contacto").removeAttr("style");
                     $("#anterior").attr("style", "display:none");
                     $("#siguiente").attr("data-message", "contacto");
-                    verificarCamposCompletos("contacto");
+                    verificarCamposCompletos("contacto", siguiente);
                     break;
                     }
                 case "network": {
@@ -315,7 +316,7 @@
                     $("#general").removeAttr("style");
                     $("#anterior").attr("data-message", "general");
                     $("#siguiente").attr("data-message", "general");
-                    verificarCamposCompletos("general");
+                    verificarCamposCompletos("general", siguiente);
                     break;
                     }
                 case "authentication": {
@@ -323,7 +324,7 @@
                     $("#network").removeAttr("style");
                     $("#anterior").attr("data-message", "network");
                     $("#siguiente").attr("data-message", "network");
-                    verificarCamposCompletos("network");
+                    verificarCamposCompletos("network", siguiente);
                     break;
                     }
                 case "phase1Proposal": {
@@ -331,7 +332,7 @@
                     $("#authentication").removeAttr("style");
                     $("#anterior").attr("data-message", "authentication");
                     $("#siguiente").attr("data-message", "authentication");
-                    verificarCamposCompletos("general");
+                    verificarCamposCompletos("general", siguiente);
                     break;
                     }
                 case "phase2Proposal": {
@@ -340,7 +341,7 @@
                     $("#anterior").attr("data-message", "phase1Proposal");
                     $("#siguiente").attr("data-message", "phase1Proposal");
                     $("#siguiente").text("Siguiente"); // Vuelve a tomar el texto de "siguiente"
-                    verificarCamposCompletos("phase1Proposal");
+                    verificarCamposCompletos("phase1Proposal", siguiente);
                     break;
                     }
                 }	
