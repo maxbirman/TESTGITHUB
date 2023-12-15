@@ -136,10 +136,9 @@
         }	
 
         function alertCharLimit(input){
-            alert(input.val());
             if(input.attr('maxlength') !== undefined) {
                 var valor = input.val();
-                var maxLength = input.attr('maxlenght');
+                var maxLength = input.attr('maxlength');
 
                 if(valor > maxLength) {
                     alert("El máximo de caracteres es 15");
