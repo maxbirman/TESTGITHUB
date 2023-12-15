@@ -135,7 +135,7 @@
             return correcto;
         }	
 
-        alertCharLimit(input){
+        function alertCharLimit(input){
             if(input.attr('maxlength') !== undefined) {
                 var valor = $(this).val();
                 var maxLength = $(this).attr('maxlenght');
