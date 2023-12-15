@@ -219,6 +219,7 @@
     
         function populateDevices(){
             var select = $("#deviceModel");
+            alert(select.attr("id"));
             $.ajax ({
                 type: "GET",
                 url: "https://raw.githubusercontent.com/maxbirman/web/main/interfaces.csv",
