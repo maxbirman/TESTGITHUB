@@ -141,10 +141,8 @@
                 var maxLength = input.attr('maxlength');
 
                 if(valor.length == maxLength) {
-                    input.attr("style", "box-shadow:0 0 0 .25rem rgba(253,13,33,.25)");
                     alert("El nombre de la VPN no puede tener más de 15 caracteres");        
-                    input.val(valor.substring(0, maxLength-1));           
-                    $("#siguiente").attr('disabled', 'disabled');
+                    input.val(valor.substring(0, maxLength-1));        
                 }
 
                 else {input.removeAttr("style");}
