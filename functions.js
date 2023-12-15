@@ -260,7 +260,7 @@
                         $("#anterior").removeAttr("style");	
                         $("#anterior").attr("data-message", "general")
                         //$("#siguiente").attr('disabled', 'disabled');
-                        verificarCamposCompletos("general", siguiente);
+                        verificarCamposCompletos("general", $("#siguiente"));
                         cargarDatos("contacto");
                     }else {alert("Por favor ingrese un email valido");}
                     break;
