@@ -112,13 +112,15 @@
                         var listaInterface = filas[i].split(";");
                         
                         if(listaInterface[0] == selected){
+                            //se saltea 0 y 1 porque corresponden al modelo del Equipo
                             for (var j = 2; j < listaInterface.length; j ++){
-                                options += listaInterface[j] + ";" + listaInterface[j] + "\n";
-                            }
-                            //alert("options: " + options);
-                        }
-                        
-                        
+                                if(j== (listaInterface.length) - 1) {
+                                    options += listaInterface[j] + ";" + listaInterface[j];
+                                }else {
+                                    options += listaInterface[j] + ";" + listaInterface[j] + "\n";
+                                }
+                            }                            
+                        }                       
                     }
                     return options;
                 }
