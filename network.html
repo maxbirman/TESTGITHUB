@@ -110,7 +110,11 @@
                     alert("fila 1: " + filas[0]);
                     for (var i = 0; i < filas.length; i ++) {
                         var listaInterface = filas[i].split(";");
-                        alert("interface: " + listaInterface[2]);
+                        for (var j = 2; j < listaInterface.length; j ++){
+                            options[j][0] = listaInterface[j];
+                            options[j][1] = listaInterface[j];
+                        }
+                        
                         return options;
                     }
                 }
