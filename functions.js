@@ -167,23 +167,16 @@
 
 
         };
-    
-        function populateDevices(){
+
+        function populateModels (){
             var select = $("#deviceModel");
-            alert(select.attr("id"));
-            $.ajax ({
-                type: "GET",
-                url: "https://raw.githubusercontent.com/maxbirman/web/main/interfaces.csv",
-                dataType: "text",
-                success: function(data) {
-                    var filas = data.split("\n");
-                        for(var i = 0; i < filas.length; i++){
-                            var fila = filas[i];
-                            select.append('<option value="' + fila[0] + '">' + fila[1] + '</option>');
-                        }
-                }
-            });
-        }
+            var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+            var data = [];
+            getArrayFromFile(file, function(extData) {
+                data = extData;            
+                populateSelect(select,data);
+            });                   
+          }
 
     //Generar lista de mascaras de red disponibles segun la IP seleccionada	
         function populate (select, masks){
@@ -223,7 +216,7 @@
                     $("#siguiente").attr("data-message", "network");
                     $("#siguiente").attr('disabled', 'disabled');
                     verificarCamposCompletos("network", siguiente);
-                    populateDevices();
+                    populateModels();
                     cargarDatos("general");							
                     break;
                     }
