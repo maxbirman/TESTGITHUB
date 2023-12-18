@@ -177,6 +177,22 @@
                 populateSelect(select,data);
             });                   
           }
+          
+          function populateInterfaces(select){
+            var selected = select.val();
+            var select = $("#interface");
+            var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
+            var data = [];
+            getArrayFromFile(file, function(extData) {
+                data = extData;
+                var interfaceList = getOptionsFromArray(data, selected);
+                select.empty();
+                select.append('<option value="" disabled selected="selected">--Seleccione una interface--</option>');
+                populateSelect(select, interfaceList);
+            })
+            select.removeAttr('disabled');
+         } 
+
 
     //Generar lista de mascaras de red disponibles segun la IP seleccionada	
         function populate (select, masks){
