@@ -634,6 +634,10 @@
 				verificarCamposCompletos(divId, $("#siguiente"));
 				alertCharLimit($(this));
 			});
+
+			$("#deviceModel").change(function(){ populateInterfaces($("#deviceModel"))});
+
+                populateModels();
 		});       	
 	</script>
 </html>	
