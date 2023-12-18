@@ -159,7 +159,7 @@
                     var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
                     var data = [];
                     getArrayFromFile(file, function(extData) {
-                        data = getOptionsFromArray(extData, selected);
+                        data = extData;
                         alert("data123: " + data);
                         populateSelect(select, data);
                     })
