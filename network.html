@@ -156,7 +156,7 @@
                     var select = $("#interface");
                     var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
                     var data = [];
-                    getArrayFromFile(file, function(extData) {
+                    getArrayFromFile(file, function(extData, selected) {
                         data = extData;
                         var interfaceList = getOptionsFromArray(data);
                         populateSelect(select, interfaceList);
