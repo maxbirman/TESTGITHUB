@@ -108,13 +108,15 @@
                     alert("data: " + data);
                     var filas = data.split("\n");
                     alert("fila 1: " + filas[0]);
+
                     for (var i = 0; i < filas.length; i ++) {
                         var listaInterface = filas[i].split(";");
                         
-                        for (var j = 2; j < listaInterface.length; j ++){
-                            options += listaInterface[j] + ";" + listaInterface[j] + "\n";
+                        if(listaInterface[0 == selected]){
+                            for (var j = 2; j < listaInterface.length; j ++){
+                                options += listaInterface[j] + ";" + listaInterface[j] + "\n";
+                            }
                         }
-                        
                         alert("options: " + options);
                         //return options;
                     }
