@@ -158,8 +158,8 @@
                     var data = [];
                     getArrayFromFile(file, function(extData) {
                         data = extData;
-                        alert("data123: " + data);
-                        populateSelect(select, data);
+                        var interfaceList = getOptionsFromArray(data);
+                        populateSelect(select, interfaceList);
                     })
                     select.removeAttr('disabled');
                  } 
