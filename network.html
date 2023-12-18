@@ -24,7 +24,7 @@
                                     <label>Interface</label>
                                 </div>
                                 <div class="col-5">
-                                    <select name="deviceModel" class="form-control" id="deviceModel"  onchange="populateInterfaces($('#deviceModel'))">
+                                    <select name="deviceModel" class="form-control" id="deviceModel">
                                         <option value="" disabled selected="selected">--Seleccione el modelo del dispositivo--</option>										
                                     </select>									
                                 </div>						
@@ -100,7 +100,7 @@
                     alertCharLimit($(this));
                 });
 
-               // $("#deviceModel").change(function(){ populateInterfaces($("#deviceModel"))});
+               $("#deviceModel").change(function(){ populateInterfaces($("#deviceModel"))});
 
                 populateModels();
                 
