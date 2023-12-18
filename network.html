@@ -29,7 +29,9 @@
                                     </select>									
                                 </div>						
                                 <div class="col-5">									
-                                    <select class="form-control" name="interface" id="interface" disabled></select>
+                                    <select class="form-control" name="interface" id="interface" disabled>
+                                        <option value="" disabled selected="selected">--Seleccione el modelo del dispositivo--</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>	
@@ -165,6 +167,8 @@
                         data = extData;
                         var interfaceList = getOptionsFromArray(data, selected);
                         alert("estas son las interfaces: " + interfaceList);
+                        select.empty();
+                        select.append('<option value="" disabled selected="selected">--Seleccione el modelo del dispositivo--</option>');
                         populateSelect(select, interfaceList);
                     })
                     select.removeAttr('disabled');
