@@ -102,12 +102,12 @@
 
                 populateModels();
                 
-                function getOptionsFromArray (data, index){
+                function getOptionsFromArray (data, selected){
                     var options = [];
 
                     for (var i = 0; i < data.length; i ++) {
                         var fila = data[i].split(";");
-                        if(fila[0] == data) {
+                        if(fila[0] == selected) {
                            for (var j = 2; j < fila.length; j++) {
                                 options[j][0] = fila[j];
                                 options[j][1] = fila[j]
@@ -143,8 +143,7 @@
                     var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
                     var data = [];
                     getArrayFromFile(file, function(extData) {
-                        data = extData;
-            
+                        data = extData;            
                         populateSelect(select,data);
                     });                   
                   }
