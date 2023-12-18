@@ -287,11 +287,11 @@
             
             $('#addSubnets_' + currentSubnet).attr('style','display:none');
 
-            if(numSubnets <= 3){
+            if(numSubnets <= 2){
                 $('#addSubnets_' + numSubnets).on('click', addSubnets);           
                 numSubnets ++;
             } else {
-                
+                $('#addSubnets_' + numSubnets).on(function() {alert("No se permiten más de 4 Phase 2")});
             }
         }
     });
