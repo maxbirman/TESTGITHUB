@@ -106,10 +106,7 @@
                 
                 function getOptionsFromArray (data, selected){
                     var options = "";
-                    alert("selected: " + selected);
-                    alert("data: " + data);
                     var filas = data.split("\n");
-                    alert("fila 1: " + filas[0]);
 
                     for (var i = 0; i < filas.length; i ++) {
                         var listaInterface = filas[i].split(";");
@@ -128,7 +125,6 @@
 
                 //funcion para popular cualquier select
                 function populateSelect (select, data) {
-                    alert ("Las opciones serían: " + data);
                     var options = data.split('\n');
                     for (var i = 0; i < options.length; i++){
                         var option = options[i].split(";");
@@ -166,7 +162,6 @@
                     getArrayFromFile(file, function(extData) {
                         data = extData;
                         var interfaceList = getOptionsFromArray(data, selected);
-                        alert("estas son las interfaces: " + interfaceList);
                         select.empty();
                         select.append('<option value="" disabled selected="selected">--Seleccione una interface--</option>');
                         populateSelect(select, interfaceList);
