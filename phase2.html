@@ -286,9 +286,13 @@
                             </div>`);	
             
             $('#addSubnets_' + currentSubnet).attr('style','display:none');
-            $('#addSubnets_' + numSubnets).on('click', addSubnets);             
 
-            numSubnets ++;
+            if(numSubnets <= 3){
+                $('#addSubnets_' + numSubnets).on('click', addSubnets);           
+                numSubnets ++;
+            } else {
+                
+            }
         }
     });
 
