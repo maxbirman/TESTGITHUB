@@ -109,15 +109,8 @@
                     var filas = data.split("\n");
                     alert("fila 1: " + filas[0]);
                     for (var i = 0; i < filas.length; i ++) {
-                        var fila = filas[i].split(",");
-                        alert("fila: " + fila);
-                        var interfaces = fila.split("\n");
-                        if(interfaces[0] == selected) {
-                           for (var j = 2; j < interfaces.length; j++) {
-                                options[j][0] = interfaces[j];
-                                options[j][1] = fila[j]
-                           }     
-                        }
+                        var listaInterface = filas[i].split(";");
+                        alert("interface: " + listaInterface[2]);
                         return options;
                     }
                 }
