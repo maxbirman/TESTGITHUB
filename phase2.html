@@ -21,8 +21,8 @@
                     <div class="bg-black text-white">
                         <h3>Phase 2 Proposal</h3>		
                     </div>						
-                    <div class="mb-1">	
-                        <div class="row mt-3">	
+                    <div class="mb-1" id="subnets">	
+                        <div class="row mt-3" id="subnets_0">	
                             <div class="col-3">
                                 <labelclass="pt-2">Subnets</label>
                             </div>								
@@ -239,7 +239,50 @@
         </form>
     </div>
 </body>
+<script>
+    $(document).ready(function () {
 
+        $('#subnets .btn').on('click', addSubnets);
+
+        var numSubnets = 1;
+
+        function addSubnets(){
+            var parent = $("#subnets");
+            var childId = "subnets_" + numSubnets;
+            var newDiv = $("div/");
+            newDiv.addId(childId);
+            newDiv.addClass("row mt-3");
+
+            parent.append($(newDiv));
+            
+            newDiv.append($(`
+                            <div class="col-3">
+                                <labelclass="pt-2">Subnets</label>
+                            </div>								
+                            <div class="col-3 pe-0">
+                                <input type="localSubnet" class="form-control subnet"  onblur="checkSubnet(this)" id="localSubnet" aria-describedby="nameHelp" placeholder="Local Subnet" required>
+                            </div>
+                            <div class="col-1 ps-0">
+                                <select class="form-control" name="localMask" id="localMask" disabled>							
+                                </select>
+                            </div>								
+                            <div class="col-3 pe-0">
+                                <input type="remoteSubnet" class="form-control subnet" onblur="checkSubnet(this)"  id="remoteSubnet" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
+                            </div>
+                            <div class="col-1 ps-0">
+                                <select class="form-control" name="remoteMask" id="remoteMask" disabled>
+                                </select>
+                            </div>
+                            <div class="col-1">
+                                <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">+</a>
+                            </div>	`));
+
+            numSubnets ++;                
+                            
+        }
+    }
+
+</script>
 
 
 </html>
