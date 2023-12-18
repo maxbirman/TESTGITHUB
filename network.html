@@ -104,7 +104,7 @@
                 
                 function getOptionsFromArray (data, selected){
                     var options = [];
-                    alert(selected);
+                    alert("selected: " + selected);
                     for (var i = 0; i < data.length; i ++) {
                         var fila = data[i].split(";");
                         if(fila[0] == selected) {
@@ -151,9 +151,7 @@
                   $("#deviceModel").change(function(){ populateInterfaces($("#deviceModel"))});
                           
                  function populateInterfaces(select){
-                    //alert("caasdas");
                     var selected = select.val();
-                    //alert(selected);
                     var select = $("#interface");
                     var file = "https://raw.githubusercontent.com/maxbirman/TESTGITHUB/main/interfaces.csv";
                     var data = [];
@@ -164,9 +162,6 @@
                     select.removeAttr('disabled');
                  } 
 
-                 /*function populateInterfaces() {
-                    alert("demonios");
-                 }*/
             });       	
         </script>
     </html>	
