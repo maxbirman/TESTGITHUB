@@ -23,7 +23,7 @@
                     </div>						
                     <div class="mb-1" id="subnets">	
                         <div class="row mt-3" id="subnets_0">	
-                            <div class="col-3">
+                            <div class="col-2">
                                 <labelclass="pt-2">Subnets</label>
                             </div>								
                             <div class="col-3 pe-0">
@@ -41,7 +41,7 @@
                                 </select>
                             </div>
                             <div class="col-1">
-                                <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">+</a>
+                                <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_0">+</a>
                             </div>	
                         </div>
                     </div>						
@@ -242,13 +242,14 @@
 <script>
     $(document).ready(function () {
 
-        $('#subnets .btn').on('click', addSubnets);
+        $('#addSubnets_0').on('click', addSubnets);
 
         var numSubnets = 1;
     
 
         function addSubnets(){
-            
+
+            var currentSubnet = numSubnets - 1;
             var childId = "subnets_" + numSubnets;    
             
             jQuery('<div>', {
@@ -262,22 +263,28 @@
                                 <labelclass="pt-2">Subnets</label>
                             </div>								
                             <div class="col-3 pe-0">
-                                <input type="localSubnet" class="form-control subnet"  onblur="checkSubnet(this)" id="localSubnet" aria-describedby="nameHelp" placeholder="Local Subnet" required>
+                                <input type="localSubnet" class="form-control subnet"  onblur="checkSubnet(this)" id="localSubnet_${numSubnets}" aria-describedby="nameHelp" placeholder="Local Subnet" required>
                             </div>
                             <div class="col-1 ps-0">
-                                <select class="form-control" name="localMask" id="localMask" disabled>							
+                                <select class="form-control" name="localMask" id="localMask_${numSubnets}" disabled>							
                                 </select>
                             </div>								
                             <div class="col-3 pe-0">
-                                <input type="remoteSubnet" class="form-control subnet" onblur="checkSubnet(this)"  id="remoteSubnet" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
+                                <input type="remoteSubnet" class="form-control subnet" onblur="checkSubnet(this)"  id="remoteSubnet_${numSubnets}" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
                             </div>
                             <div class="col-1 ps-0">
-                                <select class="form-control" name="remoteMask" id="remoteMask" disabled>
+                                <select class="form-control" name="remoteMask" id="remoteMask_${numSubnets}" disabled>
                                 </select>
                             </div>
                             <div class="col-1">
-                                <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">+</a>
+                                <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnets_${numSubnets}">+</a>
+                            </div>
+                            <div class="col-1">
+                                <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${numSubnets}">+</a>
                             </div>`);	
+            
+            $('addSubnets_'+currentSubnet).attr('style','display:none');
+
 
             numSubnets ++;
         }
