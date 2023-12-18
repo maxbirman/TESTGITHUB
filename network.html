@@ -106,8 +106,10 @@
                     var options = [];
                     alert("selected: " + selected);
                     alert("data: " + data);
+                    var filas = data.split("\n");
                     for (var i = 0; i < data.length; i ++) {
-                        var fila = data[i].split(";");
+                        var fila = filas[i].split(";");
+                        alert("fila: " + fila);
                         if(fila[0] == selected) {
                            for (var j = 2; j < fila.length; j++) {
                                 options[j][0] = fila[j];
