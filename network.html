@@ -119,8 +119,9 @@
                             //alert("options: " + options);
                         }
                         
-                        return options;
+                        
                     }
+                    return options;
                 }
 
                 //funcion para popular cualquier select
@@ -163,6 +164,7 @@
                     getArrayFromFile(file, function(extData) {
                         data = extData;
                         var interfaceList = getOptionsFromArray(data, selected);
+                        alert("estas son las interfaces: " + interfaceList);
                         populateSelect(select, interfaceList);
                     })
                     select.removeAttr('disabled');
