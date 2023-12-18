@@ -160,6 +160,7 @@
                     var data = [];
                     getArrayFromFile(file, function(extData) {
                         data = getOptionsFromArray(extData, selected);
+                        alert("data123: " + data);
                         populateSelect(select, data);
                     })
                     select.removeAttr('disabled');
