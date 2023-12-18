@@ -98,7 +98,7 @@
                     alertCharLimit($(this));
                 });
 
-                //$('#deviceModel').change(populateInterfaces());
+                $("#deviceModel").change(function(){ populateInterfaces(deviceModel)});
 
                 populateModels();
                 
@@ -149,7 +149,6 @@
                     });                   
                   }
 
-                  var deviceModel;
                   $("#deviceModel").change(function(){ populateInterfaces(deviceModel)});
                           
                  function populateInterfaces(select){
