@@ -107,13 +107,14 @@
                     alert("selected: " + selected);
                     alert("data: " + data);
                     var filas = data.split("\n");
-                    alert("filas: " + filas);
+                    alert("fila 1: " + filas[0]);
                     for (var i = 0; i < filas.length; i ++) {
                         var fila = filas[i].split(",");
                         alert("fila: " + fila);
-                        if(fila[0] == selected) {
-                           for (var j = 2; j < fila.length; j++) {
-                                options[j][0] = fila[j];
+                        var interfaces = fila.split("\n");
+                        if(interfaces[0] == selected) {
+                           for (var j = 2; j < interfaces.length; j++) {
+                                options[j][0] = interfaces[j];
                                 options[j][1] = fila[j]
                            }     
                         }
