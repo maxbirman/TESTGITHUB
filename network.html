@@ -126,7 +126,7 @@
                 //funcion para popular cualquier select
                 function populateSelect (select, data) {
                     alert ("Las opciones serían: " + data);
-                    //var options = data.split('\n');
+                    var options = data.split('\n');
                     for (var i = 0; i < options.length; i++){
                         var option = options[i].split(";");
                         select.append('<option value="' + option[0] + '">' + option[1] + '</option>');
