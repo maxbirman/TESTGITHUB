@@ -166,7 +166,7 @@
                         } else {alert("Por favor introduzca un formato de IP válido");}		
 
 
-        };
+        }
 
         function populateModels (){
             var select = $("#deviceModel");
