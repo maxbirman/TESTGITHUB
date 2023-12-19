@@ -247,10 +247,9 @@
     $(document).ready(function () {
 
         $('#addSubnets_0').on('click', addSubnets);
-
         var numSubnets = 1;
     
-
+    
         function addSubnets(){
 
             var currentSubnet = numSubnets - 1;
@@ -302,6 +301,7 @@
             } else {
                 $('#addSubnets_' + numSubnets).on('click', function() {alert("No se permiten más de 4 Phase 2")});
             }
+            $('#removeSubnes_' + numSubnets).on('click', $('#subnets_' + numSubnets).remove());
         }
     });
 
