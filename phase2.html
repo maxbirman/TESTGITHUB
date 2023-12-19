@@ -291,7 +291,8 @@
                                     </div>                                    
                                 </div>                                
                             </div>`);	
-            
+                            
+            $('#removeSubnets_' + numSubnets).on('click', function() {$('#subnets_' + numSubnets).remove()});
             $('#addSubnets_' + currentSubnet).attr('style','display:none');
             $('#removeSubnets_' + currentSubnet).attr('style' , 'display:none');
 
@@ -301,7 +302,7 @@
             } else {
                 $('#addSubnets_' + numSubnets).on('click', function() {alert("No se permiten más de 4 Phase 2")});
             }
-            $('#removeSubnets_' + numSubnets).on('click', function() {$('#subnets_' + numSubnets).remove()});
+            
         }
     });
 
