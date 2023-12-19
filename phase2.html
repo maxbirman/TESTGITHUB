@@ -37,7 +37,7 @@
                                 </select>
                             </div>								
                             <div class="col-3 pe-0">
-                                <input type="remoteSubnet" class="form-control subnet" onblur="checkSubnet(this)"  id="remoteSubnet" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
+                                <input type="remoteSubnet" class="form-control subnet" id="remoteSubnet" aria-describedby="nameHelp" placeholder="Remote Subnet" required>
                             </div>
                             <div class="col-1 ps-0">
                                 <select class="form-control" name="remoteMask" id="remoteMask" disabled>
@@ -251,6 +251,8 @@
 
         var numSubnets = 1;
         var currentSubnet = 0;
+
+        $('.subnets input[required]').on('blur', checkSubnet(this));
 
         $('#addSubnets_0').on('click', addSubnets);
 
