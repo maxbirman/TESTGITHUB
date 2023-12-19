@@ -102,6 +102,8 @@
     
         //Asigna funcion al salir de los campos de Subnet en la Phase2, llama a la funcion para popular la lista de mascaras segun la subnet introducida	
         function checkSubnet(input) {
+
+            alert(input);
            
             var ip = input.val();
             var select = $("#localMask");
@@ -177,7 +179,7 @@
                 populateSelect(select,data);
             });                   
           }
-          
+
           function populateInterfaces(select){
             var selected = select.val();
             var select = $("#interface");
