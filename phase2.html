@@ -295,6 +295,7 @@
             $('#removeSubnets_' + numSubnets).on('click', function() {
                                                                 $('#subnets_' + currentSubnet).remove()
                                                                 numSubnets --;
+                                                                currentSubnet --;
                                                                 alert("current: " + currentSubnet + "/n num: " + numSubnets);
                                                                 });
             $('#addSubnets_' + currentSubnet).attr('style','display:none');
