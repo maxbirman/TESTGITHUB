@@ -109,7 +109,7 @@
             var select = $("#localMask");
                                 
 
-            if(input.attr("id") == "remoteSubnet"){  //si se aplica a la subnet remota
+            if($(input).attr("id") == "remoteSubnet"){  //si se aplica a la subnet remota
                 select = $("#remoteMask");
             }					
             
