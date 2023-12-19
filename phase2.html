@@ -42,7 +42,7 @@
                             </div>
                             <div class="col-1">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-6" id="buttons_0">
                                         <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_0">+</a>
                                     </div>                                    
                                 </div>                                
@@ -249,6 +249,18 @@
         var numSubnets = 1;
         var currentSubnet = 0;
 
+        var buttons = `
+                                        <div class="col-1">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnets_${numSubnets}">-</a>
+                                                </div> 
+                                                <div class="col-6">
+                                                    <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${numSubnets}">+</a>
+                                                </div>                                    
+                                            </div>                                
+                                        </div>`;
+
         $('#addSubnets_0').on('click', addSubnets);
         
     
@@ -257,18 +269,10 @@
             numSubnets --;
             currentSubnet --;
 
-            $('#subnets_' + currentSubnet).append(`
-                            <div class="col-1">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnets_${numSubnets}">-</a>
-                                    </div> 
-                                    <div class="col-6">
-                                        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${numSubnets}">+</a>
-                                    </div>                                    
-                                </div>                                
-                            </div>`)
+            $("#buttons_" + currentSubnet).append(buttons);
 
+            $("#removeSubnets_" + currentSubnet).on('click', removeSubnets);
+            $("#addSubnets_" + currentSubnet).on('click', addSubnets);
             alert("current: " + currentSubnet + "/n num: " + numSubnets);                                                                
 
         }
