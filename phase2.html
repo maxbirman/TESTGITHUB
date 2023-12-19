@@ -249,7 +249,13 @@
         $('#addSubnets_0').on('click', addSubnets);
         var numSubnets = 1;
     
-    
+        function removeSubnets(){
+            $('#subnets_' + currentSubnet).remove()
+            numSubnets --;
+            currentSubnet --;
+            alert("current: " + currentSubnet + "/n num: " + numSubnets);                                                                
+
+        }
         function addSubnets(){
 
             var currentSubnet = numSubnets - 1;
@@ -292,12 +298,7 @@
                                 </div>                                
                             </div>`);	
 
-            $('#removeSubnets_' + numSubnets).on('click', function() {
-                                                                $('#subnets_' + currentSubnet).remove()
-                                                                numSubnets --;
-                                                                currentSubnet --;
-                                                                alert("current: " + currentSubnet + "/n num: " + numSubnets);
-                                                                });
+            $('#removeSubnets_' + numSubnets).on('click', removeSubnets());
             $('#addSubnets_' + currentSubnet).attr('style','display:none');
             $('#removeSubnets_' + currentSubnet).attr('style' , 'display:none');
 
