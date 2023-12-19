@@ -42,7 +42,7 @@
                             </div>
                             <div class="col-1">
                                 <div class="row">
-                                    <div class="col-6" id="buttons_0">
+                                    <div class="col-6" id="addButton_0">
                                         <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_0">+</a>
                                     </div>                                    
                                 </div>                                
@@ -249,41 +249,33 @@
         var numSubnets = 1;
         var currentSubnet = 0;
 
-        function addButton (id, button) {
+        $('#addSubnets_0').on('click', addSubnets);
+
+        function addButton (id, button, text) {
             
+            var divId = button + 'Button_' + id;
+            var buttonId = button + 'Subnets_' + id;
+
             jQuery('<a>', {
                 href: "#",
-                id: button + "-" + id,
+                id: buttonId,
                 class: 'btn btn-primary',
                 tabindex: '-1',
                 role: 'button',
                 ariaDisabled: 'true',
+                text: text
 
-            }).appendTo('#buttons_' + id);           
+            }).appendTo(divId);           
             
         }
-
-        var buttons = `
-                                        <div class="col-1">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnets_${currentSubnet}">-</a>
-                                                </div> 
-                                                <div class="col-6">
-                                                    <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${currentSubnet}">+</a>
-                                                </div>                                    
-                                            </div>                                
-                                        </div>`;
-
-        $('#addSubnets_0').on('click', addSubnets);
-        
-    
+      
         function removeSubnets(){
             $('#subnets_' + currentSubnet).remove()
             numSubnets --;
             currentSubnet --;
 
-            $("#buttons_" + currentSubnet).append(buttons);
+            addButton(currentSubnet,"remove", "-");
+            addButton(currentSubnet, "add", "+");
 
             $("#removeSubnets_" + currentSubnet).on('click', removeSubnets);
             $("#addSubnets_" + currentSubnet).on('click', addSubnets);
@@ -323,9 +315,10 @@
                             </div>
                             <div class="col-1">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-6" id="buttons_remove_${numSubnets}">
                                         <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnets_${numSubnets}">-</a>
-                                    
+                                    </div> 
+                                    <div class="col-6" id="buttons_add_${numSubnets}">
                                         <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${numSubnets}">+</a>
                                     </div>                                    
                                 </div>                                
