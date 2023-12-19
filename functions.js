@@ -105,7 +105,7 @@
 
             //alert(input.attr('id'));
            
-            var ip = input.val();
+            var ip = $(input).val();
             var select = $("#localMask");
                                 
 
