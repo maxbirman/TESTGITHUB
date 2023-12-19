@@ -255,7 +255,7 @@
             var currentSubnet = numSubnets - 1;
             var childId = "subnets_" + numSubnets;    
 
-            alert(currentSubnet);
+            //alert(currentSubnet);
             
             jQuery('<div>', {
                 id: `${childId}`,
@@ -291,7 +291,7 @@
                                     </div>                                    
                                 </div>                                
                             </div>`);	
-                            
+
             $('#removeSubnets_' + numSubnets).on('click', function() {$('#subnets_' + numSubnets).remove()});
             $('#addSubnets_' + currentSubnet).attr('style','display:none');
             $('#removeSubnets_' + currentSubnet).attr('style' , 'display:none');
