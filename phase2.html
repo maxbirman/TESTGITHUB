@@ -253,9 +253,22 @@
         
     
         function removeSubnets(){
-            $('#subnets_' + currentSubnet).remove()
+            $('#subnets_' + numSubnets).remove()
             numSubnets --;
             currentSubnet --;
+
+            $('#subnets_' + currentSubnet).append(`
+                            <div class="col-1">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="removeSubnets_${numSubnets}">-</a>
+                                    </div> 
+                                    <div class="col-6">
+                                        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true" id="addSubnets_${numSubnets}">+</a>
+                                    </div>                                    
+                                </div>                                
+                            </div>`)
+
             alert("current: " + currentSubnet + "/n num: " + numSubnets);                                                                
 
         }
@@ -301,7 +314,7 @@
                                 </div>                                
                             </div>`);	
 
-           // $('#removeSubnets_' + numSubnets).on('click', removeSubnets());
+            $('#removeSubnets_' + numSubnets).on('click', removeSubnets());
             //$('#addSubnets_' + currentSubnet).attr('style','display:none');
            // $('#removeSubnets_' + currentSubnet).attr('style' , 'display:none');
 
