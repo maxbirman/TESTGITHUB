@@ -246,9 +246,11 @@
 <script>
     $(document).ready(function () {
 
-        $('#addSubnets_0').on('click', addSubnets);
         var numSubnets = 1;
         var currentSubnet = 0;
+
+        $('#addSubnets_0').on('click', addSubnets);
+        
     
         function removeSubnets(){
             $('#subnets_' + currentSubnet).remove()
@@ -257,6 +259,7 @@
             alert("current: " + currentSubnet + "/n num: " + numSubnets);                                                                
 
         }
+
         function addSubnets(){
 
             var childId = "subnets_" + numSubnets;    
