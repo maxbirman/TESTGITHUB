@@ -270,7 +270,10 @@
         }
       
         function removeSubnets(){
-            $('#subnets_' + currentSubnet).remove()
+            numSubnets --;
+            currentSubnet --;
+
+            $('#subnets_' + numSubnet).remove()
             
 
             addButton(currentSubnet,"remove", "-");
@@ -278,9 +281,7 @@
 
             $("#removeSubnets_" + currentSubnet).on('click', removeSubnets);
             $("#addSubnets_" + currentSubnet).on('click', addSubnets);
-            
-            numSubnets --;
-            currentSubnet --;
+                       
             
             alert("current: " + currentSubnet + "/n num: " + numSubnets);                                                                
 
