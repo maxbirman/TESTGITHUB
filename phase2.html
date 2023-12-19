@@ -292,7 +292,8 @@
                                 </div>                                
                             </div>`);	
 
-            $('#removeSubnets_' + numSubnets).on('click', function() {$('#subnets_' + numSubnets).remove()});
+            $('#removeSubnets_' + numSubnets).on('click', function() {$('#subnets_' + numSubnets).remove();
+                                                                        alert($('#subnets_' + numSubnets))});
             $('#addSubnets_' + currentSubnet).attr('style','display:none');
             $('#removeSubnets_' + currentSubnet).attr('style' , 'display:none');
 
