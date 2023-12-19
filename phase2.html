@@ -302,8 +302,11 @@
                             </div>`);	
 
            // $('#removeSubnets_' + numSubnets).on('click', removeSubnets());
-            $('#addSubnets_' + currentSubnet).attr('style','display:none');
-            $('#removeSubnets_' + currentSubnet).attr('style' , 'display:none');
+            //$('#addSubnets_' + currentSubnet).attr('style','display:none');
+           // $('#removeSubnets_' + currentSubnet).attr('style' , 'display:none');
+
+            $('#addSubnets_' + currentSubnet).remove();
+            $('#removeSubnets_' + currentSubnet).remove();
 
             if(numSubnets <= 2){
                 $('#addSubnets_' + numSubnets).on('click', addSubnets);           
