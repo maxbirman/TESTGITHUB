@@ -336,12 +336,13 @@
             $('#removeSubnets_' + currentSubnet).remove();
 
             if(numSubnets <= 2){
-                $('#addSubnets_' + numSubnets).on('click', addSubnets);           
-                numSubnets ++;
-                currentSubnet ++;
+                $('#addSubnets_' + numSubnets).on('click', addSubnets);          
+                
             } else {
                 $('#addSubnets_' + numSubnets).on('click', function() {alert("No se permiten más de 4 Phase 2")});
             }
+                numSubnets ++;
+                currentSubnet ++;
             alert("current: " + currentSubnet + "\n num: " + numSubnets);
         }
     });
